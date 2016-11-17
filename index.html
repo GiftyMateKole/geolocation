@@ -29,8 +29,11 @@ var lang=position.coords.longitude;
 var myLatlng = new google.maps.LatLng(lat,lang);
 var mapOptions = {zoom: 4,center: myLatlng}
 var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-var marker = new google.maps.Marker({position: myLatlng,map: map,animation:google.maps.Animation.BOUNCE,content:"Ashesi"});
-
+var marker = new google.maps.Marker({position: myLatlng,map: map,animation:google.maps.Animation.BOUNCE});
+var infowindow = new google.maps.InfoWindow({
+  content:"Ashesi"
+  });
+infowindow.open(map,marker);  
 
 }
 function onError(error) {
